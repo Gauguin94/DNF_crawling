@@ -1,0 +1,3 @@
+APIKEY = 'm4IfyspAlBF1y2aAumdC1Nj39oQHNX7v'
+LIMIT = '100'
+GETEPIC = '505'
