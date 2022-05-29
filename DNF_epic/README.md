@@ -44,6 +44,7 @@ ADV_LETTER = [
 # 대략적인 흐름  
 > **세부적인 것은 글 마지막에 존재하는 링크들로 들어가면 확인 가능.**  
 ```python
+SEARCH_URL = 'https://dunfamoa.com/characters/adventure?search='
     for num, letter in enumerate(ADV_LETTER):
         dunfaMoa(SEARCH_URL + letter, num).run()
 ```  
