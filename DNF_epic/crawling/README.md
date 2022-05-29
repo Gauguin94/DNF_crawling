@@ -10,9 +10,6 @@ FWLV = 100
 > http request와 로그 저장에 쓰일 const들을 모아놓은 파일.  
 >   
 # dfmoa.py
->   
-> dunfamoa class는 loadAdv, loadChar, saveServer, saveCharinfo, run 메소드로 구성되어 있다.  
->     
 ```python
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
@@ -23,7 +20,11 @@ class dunfaMoa:
     def __init__(self, search_url, num):
         self.search_url = search_url
         self.filename = num
-        
+```
+>   
+> dunfamoa class는 loadAdv, loadChar, saveServer, saveCharinfo, run 메소드로 구성되어 있다.  
+>     
+```python        
     def loadAdv(self):
         adv_url = []
         href_info = []
@@ -167,3 +168,7 @@ class filtering:
         return 0
 ```  
 >   
+> NEOPLE Open API를 호출한다.  
+> GET 방식의 요청을 하며, 100레벨 이하인 캐릭터들은 105레벨 아이템을 획득하지 못했거나  
+> 획득을 거의 하지 못했으리라는 가정 하에 제외시킨다.  
+> filter로 걸러지지 않고 남은 캐릭터들을 다시 txt파일에 저장한다.  
