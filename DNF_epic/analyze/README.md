@@ -104,14 +104,89 @@ ITEMNAME = [
 > 105제 고유 에픽을 모아 리스트로 저장하였다.  
 >   
 ```python
-```
+class uniqueEpic:
+    def __init__(self, epic):
+        self.epic = epic
+        self.count = 0
+```  
+>   
+> uniqueEpic 클래스는 unique, numChannel, byChannel, numDungeon, byDungeon, run 메소드로 구성되어 있다.  
+> 특정 고유 에픽이 특정 채널, 특정 던전에서 얼마나 출현했는지 확인할 수 있다.  
+>   
 ```python
-```
+    def numChannel(self):
+        channel_count = {}
+        for data in self.epic:
+            if data['channelName'] not in channel_count:
+                channel_count.setdefault(data['channelName'], 1)
+            else:
+                channel_count[data['channelName']] += 1
+        return channel_count
+
+    def byChannel(self, channel_count, epic, epic_name):
+        count_list = {}
+        for data in epic:
+            if data['channelName'] not in count_list:
+                count_list.setdefault(data['channelName'], 1)
+            else:
+                count_list[data['channelName']] += 1
+
+        for channel in count_list:
+            percentage = (count_list[channel]/channel_count[channel])*100
+            print("{} 은(는) {} 채널 내 드랍 에픽 {}개 중에서 {}개 출현, 재미로 보는 근본 없는 확률: {}%"\
+                .format(epic_name, channel, channel_count[channel], count_list[channel], percentage))
+        return 0
+```  
+>   
+> numChannel은 특정 채널에서 나온 특정 고유 에픽의 수를 세는 역할을 한다.  
+> byChannel은 numChannel에서 계산한 특정 고유 에픽의 수를 토대로  
+> 해당 Channel에서 등장한 모든 에픽 대비 고유 에픽의 비율이 얼마나 되는지 출력한다.  
+>   
 ```python
-```
+    def numDungeon(self):
+        dungeon_count = {}
+        for data in self.epic:
+            if data['dungeonName'] not in dungeon_count:
+                dungeon_count.setdefault(data['dungeonName'], 1)
+            else:
+                dungeon_count[data['dungeonName']] += 1
+        return dungeon_count
+
+    def byDungeon(self, dungeon_count, epic, epic_name):
+        count_list = {}
+        for data in epic:
+            if data['dungeonName'] not in count_list:
+                count_list.setdefault(data['dungeonName'], 1)
+            else:
+                count_list[data['dungeonName']] += 1
+
+        for dungeon in count_list:
+            percentage = (count_list[dungeon]/dungeon_count[dungeon])*100
+            print("{} 은(는) {} 던전 내 드랍 에픽 {}개 중에서 {}개 출현, 재미로 보는 근본 없는 확률: {}%"\
+                .format(epic_name, dungeon, dungeon_count[dungeon], count_list[dungeon], percentage))
+        return 0
+```  
+>   
+> numDungeon과 byDungeon은 Channel을 기준으로 한 수행에서 Dungeon을 기준으로 바꾼 것이다.  
+>   
 ```python
-```
-```python
-```
-```python
-```
+    def run(self):
+        sys.stdout = open('stdout.txt', 'w')
+
+        channel_count = self.numChannel()
+        dungeon_count = self.numDungeon()
+        
+        for item in ITEMNAME: 
+            print('\n')
+            unique_epic = self.unique(item)
+            self.byChannel(channel_count, unique_epic, item)
+            self.byDungeon(dungeon_count, unique_epic, item)
+        print("고유 에픽이 나온 경우 {}/{}".format(self.count, len(self.epic)))
+        print('\n')
+        
+        sys.stdout.close()
+        return 0
+```  
+>   
+> run 메소드는 위의 과정을 리스트로 저장한 고유 에픽별로 수행하게 된다.  
+>   
