@@ -1,3 +1,3 @@
-APIKEY = 'm4IfyspAlBF1y2aAumdC1Nj39oQHNX7v'
+APIKEY = '당신의 API Key'
 LIMIT = '100'
 GETEPIC = '505'
