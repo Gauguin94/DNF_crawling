@@ -3,7 +3,7 @@ import sys
 from json import loads
 from urllib import parse
 import urllib3
-APIKEY = 'm4IfyspAlBF1y2aAumdC1Nj39oQHNX7v'
+APIKEY = '당신의 API key를 입력하세요'
 FWLV = 100
 
 def deldupl(list):
