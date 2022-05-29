@@ -36,14 +36,6 @@ class extractEpic:
                 f.close()
         return epiclist
 
-    def deldupl(self, list):
-        update_list = []
-        for i, name in enumerate(list):
-            print("{}/{}".format(i, len(list)))
-            if name not in update_list:
-                update_list.append(name)
-        return update_list
-
     def combWord(self, epiclist):
         standard = []
         for line in epiclist:
