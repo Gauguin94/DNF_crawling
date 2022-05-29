@@ -92,6 +92,12 @@ if __name__ == "__main__":
 > 통계적인 방법을 사용하지 않아 의미없는 기록이긴 하지만,  
 > 재미로 전체 에픽 획득 대비 커스텀 에픽과 고유 에픽의 획득 수를 확인해봄.  
 >   
+# 결과
+![부츠결과](https://user-images.githubusercontent.com/98927470/170869911-54daf68b-328a-4878-b7ad-68a663c0767e.PNG)  
+>   
+> 위 그림은 결과의 일부를 캡쳐한 것이다.  
+> 모든 고유 에픽에 대한 결과는 stdout.txt파일로, DNF_epic 디렉토리에 존재한다.
+>   
 # Go to directory  
   
 > **1. Dunfamoa 크롤링**  
