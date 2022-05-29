@@ -1,4 +1,4 @@
-APIKEY = 'm4IfyspAlBF1y2aAumdC1Nj39oQHNX7v'
+APIKEY = '당신의 API key를 입력하세요'
 SERVER = 'all'
 ALLSERVER = ['cain/', 'diregie/', 'siroco/', 'prey/', 'casillas/', 'hilder/', 'anton/', 'bakal/']
 RAW_URL = 'https://dunfamoa.com'
