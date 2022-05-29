@@ -61,14 +61,14 @@ ADV_LETTER_2 = [
 ]
 
 if __name__ == "__main__":
-    # neopleWeb(TWO_LETTER).run()
-    # for num, letter in enumerate(ADV_LETTER):
-    #     dunfaMoa(SEARCH_URL + letter, num).run()
-    # do = filtering()
-    # do.run()
-    # char_list = preprocessData().run()
-    # getLog(char_list).run()
+    neopleWeb(TWO_LETTER).run()
+    for num, letter in enumerate(ADV_LETTER):
+        dunfaMoa(SEARCH_URL + letter, num).run()
+    do = filtering()
+    do.run()
+    char_list = preprocessData().run()
+    getLog(char_list).run()
     extract_func = extractEpic()
     epic = extract_func.run()
-    #custom = customEpic(epic).run()
+    custom = customEpic(epic).run()
     unique = uniqueEpic(epic).run()
