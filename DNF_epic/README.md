@@ -95,13 +95,13 @@ if __name__ == "__main__":
 # Go to directory  
   
 > **1. Dunfamoa 크롤링**  
-> [WARP](https://github.com/Gauguin94/DNF_crawling/tree/main/DNF_epic/crawling) <- click
->     
-> **2. NEOPLE 오픈 API 호출**  
-> [WARP](https://github.com/Gauguin94/DNF_crawling/tree/main/DNF_epic/getAPI) <- click  
+> [WARP](https://github.com/Gauguin94/DNF_crawling/tree/main/DNF_epic/crawling) <- click  
 >   
-> **3. 데이터 관련 사전 작업**  
+> **2. 데이터 관련 사전 작업**  
 > [WARP](https://github.com/Gauguin94/DNF_crawling/tree/main/DNF_epic/data) <- click  
+>   
+> **3. NEOPLE 오픈 API 호출**  
+> [WARP](https://github.com/Gauguin94/DNF_crawling/tree/main/DNF_epic/getAPI) <- click  
 >   
 > **4. 재미로 해본 근본없는 분석?**  
 > [WARP](https://github.com/Gauguin94/DNF_crawling/tree/main/DNF_epic/analyze) <- click  
