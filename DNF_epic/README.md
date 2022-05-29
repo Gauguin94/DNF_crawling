@@ -40,8 +40,55 @@ ADV_LETTER = [
 > 모험단 계정을 만들 때 자주 사용할만한 영단어로 구성하였다.  
 > 각 단어들은 URL 인코딩을 사용하여 변환하였다.  
 > [URL 인코딩 변환 사이트](https://www.convertstring.com/ko/EncodeDecode/UrlEncode) <- click  
->
-  
+>  
+# 대략적인 흐름  
+> **세부적인 것은 글 마지막에 존재하는 링크들로 들어가면 확인 가능.**  
+```python
+    for num, letter in enumerate(ADV_LETTER):
+        dunfaMoa(SEARCH_URL + letter, num).run()
+```  
+>  
+> 먼저, 앞서 만들었던 리스트 내 단어들로 dunfamoa 홈페이지에서 검색을 실시합니다.  
+> 모험단 검색을 통해, 모험단 내 계정 캐릭터의 이름들을 전부 가져옵니다.    
+>  
+```python
+    do = filtering()
+    do.run()
+```  
+>   
+> 목표는 105제 고유 에픽이기 때문에, 파밍을 하지 못한, 110 레벨 이하 분들은 제외시킵니다.  
+> 가져온 캐릭터의 이름들을 txt로 저장합니다.  
+>   
+```python
+    char_list = preprocessData().run()
+```  
+>   
+> 혹시나 겹치는 캐릭터가 있을 수 있기 때문에 한 번 걸러줍니다.  
+> (preprocess는 아니지만, 작성 당시 떠오르는 이름이 없어서...)  
+>   
+```python
+    getLog(char_list).run()
+```  
+>   
+> 저장한 캐릭터의 이름들의 로그를 NEOPLE Open API 서버에 요청합니다.  
+>   
+```python
+    extract_func = extractEpic()
+    epic = extract_func.run()
+```  
+>   
+> 반환받은 로그들 중 에픽 획득 로그와 에픽 획득처 로그만을 가져옵니다.  
+> 또한 다루기 쉽도록 내가 원하는 형태의 데이터로 가공합니다.  
+>    
+```python
+    custom = customEpic(epic).run()
+    unique = uniqueEpic(epic).run()
+```  
+>   
+> 커스텀 에픽과 고유 에픽의 로그를 확인하는 작업입니다.  
+> 통계적인 방법을 사용하지 않아 의미없는 기록이긴 하지만,  
+> 재미로 전체 에픽 획득 대비 커스텀 에픽과 고유 에픽의 획득 수를 확인해봤습니다.  
+>   
 # Go to directory  
   
 > **1. Dunfamoa 크롤링**  
