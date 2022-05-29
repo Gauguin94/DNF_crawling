@@ -70,7 +70,7 @@ ADV_LETTER = [
     getLog(char_list).run()
 ```  
 >   
-> 저장한 캐릭터의 이름들의 로그를 NEOPLE Open API 서버에 요청한다.  
+> 저장한 캐릭터들의 로그를 NEOPLE Open API 서버에 요청한다.  
 >   
 ```python
     extract_func = extractEpic()
