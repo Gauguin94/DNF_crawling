@@ -96,7 +96,8 @@ if __name__ == "__main__":
 ![부츠결과](https://user-images.githubusercontent.com/98927470/170869911-54daf68b-328a-4878-b7ad-68a663c0767e.PNG)  
 >   
 > 위 그림은 결과의 일부를 캡쳐한 것이다.  
-> 모든 고유 에픽에 대한 결과는 stdout.txt파일로, DNF_epic 디렉토리에 존재한다.
+> 모든 고유 에픽에 대한 결과는 stdout.txt파일로, DNF_epic 디렉토리에 존재한다.  
+> (현재 읽고 계시는 README.md가 존재하는 디렉토리)  
 >   
 # Go to directory  
   
