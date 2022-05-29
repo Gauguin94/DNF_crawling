@@ -34,7 +34,6 @@ class extractEpic:
                     log = line.replace("\n", "")
                     epiclist.append(log)
                 f.close()
-        #epiclist = self.deldupl(epiclist)
         return epiclist
 
     def deldupl(self, list):
