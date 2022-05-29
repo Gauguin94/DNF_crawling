@@ -38,7 +38,7 @@ ADV_LETTER = [
 > 최대 20개까지 출력된다.  
 > 그리고 영단어의 경우도 아주 기초적이고 접근성이,  
 > 모험단 계정을 만들 때 자주 사용할만한 영단어로 구성하였다.  
-> 각 단어들은 URL 인코딩을 사용하여 변환하였다.
+> 각 단어들은 URL 인코딩을 사용하여 변환하였다.  
 > [URL 인코딩 변환 사이트](https://www.convertstring.com/ko/EncodeDecode/UrlEncode) <- click  
 >
   
