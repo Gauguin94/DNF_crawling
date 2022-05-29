@@ -11,7 +11,7 @@ FWLV = 100
 >   
 # dfmoa.py
 >   
->  dunfamoa class는 loadAdv, loadChar, saveServer, saveCharinfo, run 메소드로 구성되어 있다.  
+> dunfamoa class는 loadAdv, loadChar, saveServer, saveCharinfo, run 메소드로 구성되어 있다.  
 >     
 ```python
 from urllib.request import urlopen
@@ -65,7 +65,7 @@ class dunfaMoa:
                 continue
         return char_info
 ```  
-> 앞서 저장한 주소들로 접속하여 서버와 캐릭터의 이름을 저장한다.  
+> 앞서 저장한 주소들로 던파모아의 모험단 페이지로 접속하여 서버와 캐릭터의 이름을 저장한다.  
 >   
 ```python
     def saveCharinfo(self, char_name):
@@ -88,4 +88,82 @@ class dunfaMoa:
 > run 메소드는 위의 메소드들을 차례로 실행하는 역할을 한다.  
 >   
 # filter.py
+```python
+class filtering:
+    def __init__(self):
+        pass
+```  
+>   
+> filtering 클래스는 dataLoad, deldupl, getInfo, run 메소드로 구성되어 있다.
+>   
+```python
+    def dataLoad(self):
+        filelist = []
+        rawlist = []
+        filelist_ = os.listdir(path)
+        for file in filelist_:
+            if 'txt' in file:
+                filelist.append(file)
+        for txt in filelist:
+            f = open(path + txt, 'r', encoding = 'UTF8')
+            try:
+                for index, raw in enumerate(f):
+                    name = raw.replace("\n", "").strip()
+                    rawlist.append(name)
+                f.close()
+            except:
+                f.close()
+                f = open(path + txt, 'r', encoding = 'cp949')
+                for index, raw in enumerate(f):
+                    name = raw.replace("\n", "").strip()
+                    rawlist.append(name)
+                f.close()
+        charlist = self.deldupl(rawlist)
+        return charlist
+```  
+>   
+> dfmoa.py에서 저장한 캐릭터 이름들을 불러온다.  
+>   
+```python
+    def deldupl(self, list):
+        update_list = []
+        for i, name in enumerate(list):
+            if name not in update_list:
+                update_list.append(name)
+        return update_list
+```  
+>   
+> 중복된 데이터를 걸러내주는 작업을 수행한다.  
+>   
+
+```python
+
+    def getInfo(self):
+        char_list = []
+        error_count = 0
+        decoded_list = self.dataLoad()
+        http = urllib3.PoolManager()
+        for time, hash in enumerate(decoded_list):
+            try:
+                url = 'https://api.neople.co.kr/df/servers/{}/characters?characterName={}&limit={}&wordType={}&apikey={}'\
+                        .format('all', hash, '200', 'match', APIKEY)
+                req = http.request('GET', url)
+                search_info = loads(req.data.decode('utf-8'))
+                if len(search_info['rows']) >= 1:
+                    for individual_info in search_info['rows']:
+                        if individual_info['level'] > FWLV:
+                            char_list.append({"serverId":individual_info['serverId'], "characterId":individual_info['characterId'], "characterName":individual_info['characterName']})
+                            print(time, individual_info['characterName'])
+            except:
+                error_count += 1
+                print("API server down or Freak character. [Error Count : {}]".format(error_count))
+        char_list = self.deldupl(char_list)
+        filename = whatTime()
+        f = open("/home/kkn/DNF_epic/data/{}_3.txt".format(filename),'w')
+        for line in char_list:
+            f.write(line['serverId']+" "+line['characterId']+" "+line['characterName']+'\n')
+        f.close()
+        print('Success! and Error count: {}'.format(error_count))
+        return 0
+```  
 >   
