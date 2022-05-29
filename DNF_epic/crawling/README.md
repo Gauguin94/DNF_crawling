@@ -60,3 +60,15 @@ from .consts import*
                 continue
         return char_info
 ```  
+> 앞서 저장한 주소들로 접속하여 서버와 캐릭터의 이름을 저장한다.  
+>   
+```python
+    def saveCharinfo(self, char_name):
+        f = open('/home/kkn/DNF_epic/crawling/dfmoa_list/{}.txt'.format(self.filename),'w')
+        for name in char_name:
+            f.write(str(name['characterName'])+'\n')
+        f.close()
+        return 0
+```  
+> 마지막으로 나중에 다시 요청할 수고를 덜기 위해 이를 txt파일로 저장한다.  
+>    
