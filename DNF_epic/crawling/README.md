@@ -19,6 +19,11 @@ from bs4 import BeautifulSoup
 from json import loads
 from .consts import*
 
+class dunfaMoa:
+    def __init__(self, search_url, num):
+        self.search_url = search_url
+        self.filename = num
+        
     def loadAdv(self):
         adv_url = []
         href_info = []
