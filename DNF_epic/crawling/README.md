@@ -39,6 +39,7 @@ from .consts import*
 > 그렇다면 \<a href = "주소"\>가 의미하는 것은  
 > 우리가 웹(바다) 서핑(surfing:파도타기)을 할 때, 닻을 내려 해당 주소에 정박하겠다는 의미가 된다.  
 > adv_url.append(RAW_URL + url.attrs['href']) 을 통해 모험단에 매칭되는 주소들을 리스트로 저장한다.  
+> (RAW_URL은 consts.py에서 선언한 const.)  
 >   
 ```python
     def loadChar(self, adv_url):
