@@ -72,3 +72,15 @@ from .consts import*
 ```  
 > 마지막으로 나중에 다시 요청할 수고를 덜기 위해 이를 txt파일로 저장한다.  
 >    
+```python
+    def run(self):
+        char_info = []
+        adv_url = self.loadAdv()
+        char_info.extend(self.loadChar(adv_url))
+        self.saveCharinfo(char_info)
+        return 0
+```  
+> run 메소드는 위의 메소드들을 차례로 실행하는 역할을 한다.  
+>   
+# filter.py
+>   
