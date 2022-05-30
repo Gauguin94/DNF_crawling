@@ -1,6 +1,6 @@
 # preprocess.py
 ```python
-class preprocessData:
+class makeData:
     def __init__(self):
         pass
 
