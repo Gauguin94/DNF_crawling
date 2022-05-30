@@ -1,4 +1,6 @@
 # preprocess.py
+> **preprocess.py 라는 이름은 나중에 이 파일에 데이터 전처리를 할 것을 상정하고 지은 이름이다.  
+> (아직은 데이터 전처리 부분을 생각해보진 않음...)** 
 ```python
 class makeData:
     def __init__(self):
@@ -51,4 +53,4 @@ class makeData:
         return char_list
 ```
 > 겹치는 캐릭터가 있을 수 있기 때문에 한 번 걸러준다.  
-> 또한 txt에 저장되어 있는 캐릭터 이름을 불러와 반환한다.  
+> 또한 txt에 저장되어 있는 캐릭터 이름을 불러와 반환한다.   
