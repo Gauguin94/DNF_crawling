@@ -55,15 +55,15 @@ if __name__ == "__main__":
 > 모험단 검색을 통해, 모험단 내 계정 캐릭터의 이름들을 전부 가져온다.    
 >   
 ```python
-    char_list = makeData().run()
+    do = filtering()
+    do.run()
 ```  
 >   
 > 목표는 105제 고유 에픽이기 때문에, 파밍을 하지 못한, 100 레벨 이하인 분들은 제외시킨다.  
 > 가져온 캐릭터의 이름들을 txt로 저장한다.  
 >   
 ```python
-    do = filtering()
-    do.run()
+    char_list = makeData().run()
 ```  
 >   
 > 혹시나 겹치는 캐릭터가 있을 수 있기 때문에 한 번 걸러준다.  
