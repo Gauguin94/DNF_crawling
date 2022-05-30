@@ -50,6 +50,5 @@ class preprocessData:
         self.saveData(char_list)
         return char_list
 ```
-> 혹시나 겹치는 캐릭터가 있을 수 있기 때문에 한 번 걸러준다.  
-> (preprocess는 아니지만, 작성 당시 떠오르는 이름이 없어서...)  
+> 겹치는 캐릭터가 있을 수 있기 때문에 한 번 걸러준다.  
 > 또한 txt에 저장되어 있는 캐릭터 이름을 불러와 반환한다.  
