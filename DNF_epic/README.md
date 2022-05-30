@@ -53,21 +53,20 @@ if __name__ == "__main__":
 >  
 > 먼저, 앞서 만들었던 리스트 내 단어들로 dunfamoa 홈페이지에서 검색을 실시한다.  
 > 모험단 검색을 통해, 모험단 내 계정 캐릭터의 이름들을 전부 가져온다.    
->  
+>   
 ```python
-    do = filtering()
-    do.run()
+    char_list = makeData().run()
 ```  
 >   
 > 목표는 105제 고유 에픽이기 때문에, 파밍을 하지 못한, 100 레벨 이하인 분들은 제외시킨다.  
 > 가져온 캐릭터의 이름들을 txt로 저장한다.  
 >   
 ```python
-    char_list = preprocessData().run()
+    do = filtering()
+    do.run()
 ```  
 >   
 > 혹시나 겹치는 캐릭터가 있을 수 있기 때문에 한 번 걸러준다.  
-> (preprocess는 아니지만, 작성 당시 떠오르는 이름이 없어서...)  
 >   
 ```python
     getLog(char_list).run()
